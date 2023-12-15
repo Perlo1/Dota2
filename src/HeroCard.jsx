@@ -10,7 +10,6 @@ const attributeMappings = {
 const HeroCard = ({ hero }) => {
   const imageUrl = `https://api.opendota.com${hero.img}`;
 
-  // Function to get the full attribute name
   const getFullAttributeName = (abbreviation) => {
     return attributeMappings[abbreviation.toLowerCase()] || abbreviation;
   };
@@ -22,6 +21,7 @@ const HeroCard = ({ hero }) => {
       <p>Primary Attribute: {getFullAttributeName(hero.primary_attr)}</p>
       <p>Attack Type: {hero.attack_type}</p>
       <p>Roles: {hero.roles.join(' ')}</p>
+      <p>Move Speed: {hero.move_speed}</p>
     </div>
   );
 };
